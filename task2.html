@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        {
+
+        //TASK1 ======================================
+        //1 
+        let a = 1, b = 1, c, d;
+        /*
+        1) выполняется инкремент переменной а(а=2), 
+        2) переменная с приравнивается пер. а. 
+        */
+        //c = 2
+        c = ++a;
+        alert(c);
+
+        //2
+        /*
+        1) переменная d приравнивается пер. b(b=1). 
+        2) выполняется инкремент переменной b(b=2), 
+         */
+        //d = 1
+        d = b++;
+        alert(d);
+
+        //3
+        /*
+        1) выполняется инкремент переменной а(а=3), 
+        2) переменная с равняется сумме 2 и пер. а. (с=5)
+        */
+        //c = 5
+        c = 2 + ++a;
+        alert(c);
+
+        //4
+        /*
+       1) переменная d приравнивается сумме 2 и пер. b(b=2).(d=4)
+       2) выполняется инкремент переменной b(b=3), 
+        */
+        //d = 4
+        d = 2 + b++;
+        alert(d);
+
+        alert(a);// 3
+        alert(b);//3
+        //TASK2 ======================================
+        a = 2;
+        /*
+        1) переменная a умножается на 2 (а=4)
+        2) переменная х приравнивается сумме а(4) и 1
+        */
+        //x = 5, a=4
+        let x = 1 + (a *= 2);
+        console.log("a=" + a + " x=" + x);
+    }
+    </script> 
+    <script>
+           //TASK3 ====================================== 
+           let a = 4, b =-7;
+           if(a>=0 && b >=0){
+               console.log("1)Разность a and b:" + (a-b));
+           }  else if (a<0 && b<0){
+            console.log("2)Произведение a and b:" + a*b);               
+           } else if ((a>=0 && b<0) || (a<0 && b >= 0) ){
+            console.log("3)Сумма a and b:" + (a+b));
+           }
+            //TASK4 ======================================
+            a = parseInt(prompt("Введите 1 число:"));
+            b = parseInt (prompt("Введите 2 число:"));
+            function sum(a, b){
+                return a+b;
+            }
+            function sub(a, b){
+                return a-b;
+            }
+            function mul(a, b){
+                return a*b;
+            }
+            function div(a, b){
+                return a/b;
+            }
+            console.log("Сумма:" + sum(a,b));
+            console.log("Разность:" + sub(a,b));
+            console.log("Произведение:" + mul(a,b));
+            console.log("Частное:" + div(a,b));
+
+            //TASK5 ======================================
+            function mathOperation (arg1, arg2, opertation){
+                let c;
+                switch (opertation) {
+                    case "+":
+                    case "сумма":
+                        c = sum(arg1,arg2);
+                        break;
+                    case "-":
+                    case "разность":
+                        c = sub(arg1,arg2);
+                        break;
+                    case "*":
+                    case "произведение":
+                         c = mul(arg1,arg2);
+                        break;
+                    case "/" :   
+                    case "частное":
+                        c =  div(arg1,arg2);
+                        break;
+                    default:
+                        return "Введите корректную операцию"
+                        break;
+                }
+                return c;
+            }
+            let oper = prompt("Введите операцию:");
+            console.log(mathOperation(a,b,oper));
+
+            //TASK6 ======================================
+            function rubles(v){
+            v = parseInt (v);
+            let s = "рублей";
+            if ((v % 100 >= 11) && (v % 100 <= 14))
+                s = "рублей";
+            else if (v % 10 == 1)
+                s = "рубль";
+            else if ((v % 10 >= 2) && (v % 10 <= 4))
+                s = "рубля";
+            return s;
+            }
+            let money = prompt("Введите сумму:");
+            alert("Ваша сумма в " + money + " " + rubles(money) + " успешно зачислена");
+    </script>
+
+</body>
+
+</html>
