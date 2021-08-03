@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        // Task1========================
+        let l = 11;
+        let numType;
+        for (let index = 0; index < l; index++) {
+            if (index == 0) {
+                numType = "это ноль";
+            } else if (index % 2 > 0) {
+                numType = "нечетное число";
+            } else if (index % 2 == 0) {
+                numType = "четное число";
+            }
+            console.log(index + " - " + numType);
+
+        }
+    </script>
+    
+
+    <script>
+        'use strict'
+        // Task 2 =======================
+       const post = {
+            author: "John", //вывести этот текст
+            postId: 23,
+            comments: [
+                {
+                    userId: 10,
+                    userName: "Alex",
+                    text: "lorem ipsum",
+                    rating: {
+                        likes: 10,
+                        dislikes: 2 //вывести это число
+                    }
+                },
+                {
+                    userId: 5, //вывести это число
+                    userName: "Jane",
+                    text: "lorem ipsum 2", //вывести этот текст
+                    rating: {
+                        likes: 3,
+                        dislikes: 1
+                    }
+                },
+            ]
+        };
+
+        console.log(post.author);
+        console.log(post.comments[0].rating.dislikes);
+        console.log(post.comments[1].userId);
+        console.log(post.comments[1].text);
+    </script>
+
+    <script>
+        'use strict'
+        //Task3=======================================
+
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+        //products.forEach(product => product.price *= 0.85);
+        //products.forEach(product => console.log(product.price));
+        products.forEach(product => {
+            product.price *= 0.85;
+            console.log(product.price)
+        });
+    </script>
+
+    <script>
+        'use strict'
+        //Task4 ============================================== 
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+
+        var newProducts =
+            products.filter(product => (product.photos != undefined) && (product.photos.length > 0));
+
+        console.log(newProducts);
+        
+            products.sort(function (a, b) {
+                if (a.price > b.price) {
+                    return 1;
+                }
+                if (a.price < b.price) {
+                    return -1;
+                }
+                return 0;
+            });
+   
+        console.log(products);
+    </script> -->
+
+     <script>
+        'use strict'
+        //Task5======================================
+        function myIncrement(i){
+                console.log(i);
+                return ++i;
+        }
+        for (let index = 0; index <= 9; index = myIncrement(index)) {
+                  
+        }
+    </script>
+
+    <script>
+        'use strict'
+        //Task6====================================
+        let x = "X";
+        for (let index = 1; index <= 20; index++) {
+            console.log(x.repeat(index));
+        }
+    </script>
+
+
+</body>
+
+</html>
