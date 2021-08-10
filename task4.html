@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //==========================Task1=============================
+        function getObject(value){
+            if((value > 999) || (value < 0) || (!Number.isInteger(value))){
+                console.log("переданное значение не удовлетворяет условию");  
+                return{}
+            }
+            
+            let units = value % 10;
+            let tens = Math.floor((value % 100) / 10);
+            let hundreds = Math.floor(value / 100);
+            return{
+                units: {units},
+                tens: {tens},
+                hundreds: {hundreds},
+            };
+        };
+
+        let value = getObject(876);
+
+        console.log(value);
+        //==========================Task1(1) ES5 =============================
+        function Product5(productName, productPrice) {
+            this.name = productName;
+            this.price = productPrice;
+        }
+
+        Product5.prototype.make25PercentDiscount = function ()  {
+            this.price = (this.price * 0.75);
+        };
+
+        const product5 = new Product5('Яблоко', 50);
+        product5.make25PercentDiscount();
+
+        console.log(product5);
+
+        //==========================Task1(1) ES6 =============================
+        class Product6 {
+            constructor(productName, productPrice) {
+                this.name = productName;
+                this.price = productPrice;
+            }
+
+            make25PercentDiscount() {
+                this.price = (this.price * 0.75);
+            }
+        }
+
+        const product6 = new Product6('Груша', 100);
+        product6.make25PercentDiscount();
+
+        console.log(product6);
+
+        //==========================Task1(2) ES5 =============================
+        function Post5(postAuthor, postText, postDate) {
+            this.author = postAuthor;
+            this.text = postText;
+            this.date = postDate;
+        }
+
+        Post5.prototype.edit = function(otherText) {
+            this.text = otherText;
+        }
+
+        const post5 = new Post5('I am', 'Hello world!!!', new Date());
+        console.log(post5);
+        post5.edit('Good bye world!');
+        console.log(post5);
+
+
+        function AttachedPost5(postAuthor, postText, postDate) {
+            Post5.call(this, postAuthor, postText, postDate);
+            this.highlighted = false;
+        }
+
+        AttachedPost5.prototype = Object.create(Post5.prototype);
+        AttachedPost5.prototype.constructor = AttachedPost5;
+
+        AttachedPost5.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        const attached5 = new AttachedPost5('I am attached', 'Hello world!!! (attached)', new Date());
+        console.log(attached5);
+        attached5.makeTextHighlighted();
+        attached5.edit('Good bye world! (attached)');
+        console.log(attached5);
+        //==========================Task1(2) ES6 =============================
+
+        class Post6 {
+            constructor(postAuthor, postText, postDate) {
+                this.author = postAuthor;
+                this.text = postText;
+                this.date = postDate;
+            }
+
+            edit(postText) {
+                this.text = Text;
+            }
+        }
+
+        const post6 = new Post6('I am', 'Hello world!!!', new Date());
+        console.log(post6);
+        post6.edit('Good bye world!');
+        console.log(post6);
+
+
+        class AttachedPost6 extends Post6 {
+            constructor(postAuthor, postText, postDate) {
+                super(postAuthor, postText, postDate);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        const attached6 = new AttachedPost6('I am', 'Hello world!!!', new Date());
+        console.log(attached6);
+        attached6.makeTextHighlighted();
+        attached6.edit('Good bye world!');
+        console.log(attached6);
+    </script>
+
+
+    
+</body>
+</html>
